@@ -18,7 +18,6 @@ DEVIICE_PATH := device/samsung/m51
 
 # Bootloader
 BOARD_VENDOR := samsung
-# TARGET_SOC := kona
 TARGET_BOOTLOADER_BOARD_NAME := sm6150
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -58,8 +57,8 @@ QCOM_BOARD_PLATFORMS += sm6150
 
 # Kernel
 TARGET_PREBUILT_KERNEL := device/samsung/m51/prebuilt/Image
-BOARD_PREBUILT_DTBIMAGE_DIR := device/samsung/m51/prebuilt/dtb
-BOARD_PREBUILT_DTBOIMAGE := device/samsung/m51/prebuilt/recoverydtbo
+TARGET_PREBUILT_DTB := device/samsung/m51/prebuilt/dtb/sdmmagpie.dtb
+BOARD_PREBUILT_DTBOIMAGE := device/samsung/m51/prebuilt/recovery_dtbo
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_KERNEL_ARCH := arm64
@@ -78,7 +77,6 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset 
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) --pagesize $(BOARD_KERNEL_PAGESIZE) --board "SRPSI24B001"
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB) --dtb_offset $(BOARD_DTB_OFFSET)
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/m51/bootimg.mk
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
